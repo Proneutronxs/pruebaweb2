@@ -1,0 +1,74 @@
+{% extends "FruitWorld/spanish.html" %}
+
+{% load static %}
+
+{% block content %}
+<section id="contact" class="section parallax" style="background-color: rgba(0, 0, 0, 0.541);">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="title-box text-center white">
+                <h2 class="title">Contacto</h2>
+                <img src="{%static 'FruitWorld/images/LogoFW.png' %}" alt="Logo de FW" class="iconocontact">
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2 contact-form">
+            <div class="contact-info text-center">
+                <!--<div class="redes">
+                    <p>You can follow us!</p>
+                    <a title="Instagram" href="https://www.instagram.com"><img src="{%static 'FruitWorld/images/parallax/Instagram.jpg' %}" alt="Instagram" class="instagram" /></a>
+                    <a title="Facebook" href="https://www.facebook.com"><img src="{%static 'FruitWorld/images/parallax/Facebook.jpg' %}" alt="Faccebook" class="facebook" /></a>
+                    <a title="Twitter" href="https://twitter.com"><img src="{%static 'FruitWorld/images/parallax/Twitter.jpg' %}" alt="Faccebook" class="twitter" /></a>
+                </div>-->
+                <p><img src="{%static 'FruitWorld/images/parallax/tel.jpg' %}" alt="Logo Tel" class="iconoscontactos"> 123 4567 890</p>
+                <p><img src="{%static 'FruitWorld/images/parallax/ubicacion.jpg' %}" alt="Logo Tel" class="iconoscontactos"> Virrey del Pino 2458, 8B - Ciudad de Buenos Aires, Argentina
+                </p>
+                <p><img src="{%static 'FruitWorld/images/parallax/correo.jpg' %}" alt="Logo Tel" class="iconoscontactos"> info@fruitworld.com.ar</p>
+            </div>
+
+            <form method="GET">{% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4" ">
+                        <input class="form-control" style="background-color: rgba(0, 0, 0, 0.466); color: beige;" name="name" id="name" placeholder="Nombre" type="text">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" style="background-color: rgba(0, 0, 0, 0.466); color: beige;" name="email" id="email" placeholder="Correo" type="email">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" style="background-color: rgba(0, 0, 0, 0.466); color: beige;" name="subjet" id="subject" placeholder="Asunto" type="text">
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" style="background-color: rgba(0, 0, 0, 0.466); color: beige;" name="message" id="message" rows="7" placeholder="Tu Mensaje"></textarea>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <button type="submit" class="btn btn-green">ENVÍAR MENSAJE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="copyright">
+                    <p>Copyright © 2023 All Rights reserved by: <a href="#">Proneutronxs</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="https://www.facebook.com/Proneutronxs"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/proneutronx/"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

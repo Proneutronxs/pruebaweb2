@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="en-gb" class="no-js">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>Fruit World S.A.</title>
+    <link rel="shortcut icon" href="{%static 'FruitWorld/images/icono.png' %}" />
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--css -->
+    <link href="{%static 'FruitWorld/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%static 'FruitWorld/css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{%static 'FruitWorld/js/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{%static 'FruitWorld/js/owl-carousel/owl.theme.css' %}" rel="stylesheet">
+    <link href="{%static 'FruitWorld/js/owl-carousel/owl.transitions.css' %}" rel="stylesheet">
+    <link href="{%static 'FruitWorld/css/magnific-popup.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{%static 'FruitWorld/css/animate.css' %}" />
+    <link rel="stylesheet" href="{%static 'FruitWorld/css/etlinefont.css' %}">
+    <link href="{%static 'FruitWorld/css/style.css' %}" type="text/css" rel="stylesheet" />
+
+    <body data-spy="scroll" data-target="#main-menu">
+
+
+        <!-- Carga -->
+        <div id="pageloader">
+            <div class="loader">
+                <img src="{%static 'FruitWorld/images/progress.gif' %}" alt='loader' />
+            </div>
+        </div>
+        <!-- Final Carga -->
+
+
+        <!--Inicio de Navegación-->
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+								<span class="sr-only"></span>
+								<span class="fa fa-bars"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+                        <div class="logo-nav">
+                            <a href="{% url 'index' %}">
+                                <img src="{%static 'FruitWorld/images/logo.png' %}" alt="Company logo" class="logoimagen" />
+                            </a>
+                        </div>
+                        <div class="clear-toggle"></div>
+                        <div id="main-menu" class="collapse scroll navbar-right">
+                            <ul class="nav">
+                                {% if inicio == "Inicio" %}
+                                    <li class="active"> <a href="{% url 'index' %}">Home</a> </li>
+                                {% else %}
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                {% endif %}
+                                <!--<li> <a href="#about">About</a> </li>
+
+                                <li> <a href="#galery">Galery</a> </li>
+
+                                <li> <a href="#fruit">Fruits</a> </li>
+
+                                <li> <a href="#products">Products</a></li>
+
+                                <li> <a href="#testimonials">Testimonials</a></li>-->
+                                {% if contacto == "Contacto" %}
+                                <li class="active"> <a href="{% url 'contact' %}">Contact</a> </li>
+                                {% else %}
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                {% endif %}
+                                <li><a href="{% url 'spanish' %}"><img src="{%static 'FruitWorld/images/es.png' %}" class="idioma" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% block content %}
+        <!-- inicio Slider  -->
+        <section id="home" class="home">
+            <div class="slider-overlay"></div>
+            <div class="flexslider">
+                <ul class="slides scroll">
+                    <li class="first">
+                        <div class="slider-text-wrapper">
+                            <div class="container">
+                                <div class="big">Welcome to Fruit World</div>
+                                <div class="small">Producing excellence</div>
+                                <img src="{%static 'FruitWorld/images/LogoFW.png' %}" alt="Logo de FW" class="logogiratorio">
+                            </div>
+                        </div>
+                        <img src="{%static 'FruitWorld/images/slider/1.jpg' %}" alt="">
+                    </li>
+
+                    <li class="secondary">
+                        <div class="slider-text-wrapper">
+                            <div class="container">
+                                <div class="big">Fruits for Life</div>
+                                <div class="small">Fruits from Patagonia</div>
+                                <img src="{%static 'FruitWorld/images/LogoFW.png' %}" alt="Logo de FW" class="logogiratorio">
+                            </div>
+                        </div>
+                        <img src="{%static 'FruitWorld/images/slider/2.jpg' %}" alt="">
+                    </li>
+
+                    <li class="third">
+                        <div class="slider-text-wrapper">
+                            <div class="container">
+                                <div class="big">Season <br> 2023 </div>
+                                <div class="small">High Valley of Rio Negro, Patagonia</div>
+                                <img src="{%static 'FruitWorld/images/LogoFW.png' %}" alt="Logo de FW" class="logogiratorio">
+                            </div>
+                        </div>
+                        <img src="{%static 'FruitWorld/images/slider/3.jpg' %}" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Final Slider  -->
+        {% endblock %}
+
+        <!--Plugins-->
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery-1.11.1.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/owl-carousel/owl.carousel.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery.flexslider-min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery.magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/easing.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery.easypiechart.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery.appear.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery.parallax-1.1.3.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/jquery.mixitup.min.js' %}"></script>
+        <script type="text/javascript" src="{%static 'FruitWorld/js/custom.js' %}"></script>
+    
+    </body>
